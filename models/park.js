@@ -4,4 +4,12 @@ const Park = function (name, price, collection){
   this.collection = [];
 }
 
+Park.prototype.addDinosaur = function(dinosaur){
+  this.collection.push(dinosaur);
+};
+
+Park.prototype.dinosaurs = function () {
+  return this.collection.length;
+};
+
 module.exports = Park;

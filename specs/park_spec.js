@@ -8,6 +8,7 @@ describe('Park', function() {
 
   beforeEach(function () {
     park = new Park('Isla', 50, [])
+    roberta = new Dinosaur('t-rex', 'carnivore', 50);
   })
 
   it('should have a name', function(){
@@ -25,7 +26,11 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, [])
   });
 
-  it('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function(){
+    park.addDinosaur(roberta);
+    const actual = park.dinosaurs();
+    assert.deepStrictEqual(actual, 1);
+  });
 
   it('should be able to remove a dinosaur from its collection');
 
