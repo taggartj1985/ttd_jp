@@ -12,4 +12,8 @@ Park.prototype.dinosaurs = function () {
   return this.collection.length;
 };
 
+Park.prototype.removeDinosaur = function(dinosaur) {
+  this.collection.splice(dinosaur);
+};
+
 module.exports = Park;
