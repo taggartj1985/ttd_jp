@@ -13,7 +13,8 @@ Park.prototype.dinosaurs = function () {
 };
 
 Park.prototype.removeDinosaur = function(dinosaur) {
-  this.collection.splice(dinosaur);
+  const indexOfDinosaur = this.collection.indexOf(dinosaur)
+  this.collection.splice(indexOfDinosaur, 1);
 };
 
 Park.prototype.popular = function (){
@@ -26,5 +27,22 @@ Park.prototype.popular = function (){
   }
   return mostPopular
 };
+
+Park.prototype.vistors = function(){
+  total = 0
+  for (dinosaur of this.collection){
+    total += dinosaur.guestsAttractedPerDay
+  }
+  return total
+};
+
+Park.prototype.yearly = function(){
+  return this.vistors() * 365;
+};
+
+Park.prototype.revenue = function(){
+  return this.yearly() * this.price;
+}
+
 
 module.exports = Park;
